@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interest Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+			background-color: #80d5e4;
+        }
+
+		label{
+			display : inline block;
+			
+		}
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #94b4b9;
+			
+        }
+        h3 {
+            margin-top: 10px;
+        }
+        input[type="num"], select {
+            width: 41%;
+            padding: 8px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+			
+        }
+        input[type="submit"] {
+            width: 41%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+	<center>
+    <div class="container">
+        <form method="POST" action="../calc/">
+            {% csrf_token %}
+            <label for="p">Enter principle amount:</label><br><br>
+		
+            <input type="number" id="p" name="p">
+            <br><br>
+		
+            <label for="r">Enter rate %:</label><br><br>
+		
+            <input type="number" id="r" name="r">
+            <br><br>
+		
+            <label for="t">Enter time in year:</label><br><br>
+		
+            <input type="number" id="t" name="t">
+            <br><br>
+		
+            <h3>Choose interest type</h3>
+            <select name="interest" id="interest">
+                <option value="simple_interest">Simple Interest</option>
+                <option value="compound_interest">Compound Interest</option>
+            </select>
+            <br>
+            <input type="submit" value="Submit" name="submit">
+		
+        </form>
+    </div>
+</center>
+</body>
+</html>
+	

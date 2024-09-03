@@ -1,0 +1,1 @@
+Django with HTML templates
